@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/songListFragment">
+
+    <fragment
+        android:id="@+id/songVideoFragment"
+        android:name="com.melihispir.youdino.view.SongVideoFragment"
+        android:label="fragment_song_video"
+        tools:layout="@layout/fragment_song_video" >
+
+        <argument
+            android:name="songUrl"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_songVideoFragment_to_songListFragment"
+            app:destination="@id/songListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/songListFragment"
+        android:name="com.melihispir.youdino.view.SongListFragment"
+        android:label="SongListFragment" >
+        <action
+            android:id="@+id/action_songListFragment_to_songVideoFragment"
+            app:destination="@id/songVideoFragment"
+            app:exitAnim="@anim/nav_default_enter_anim"
+            app:popEnterAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+</navigation>

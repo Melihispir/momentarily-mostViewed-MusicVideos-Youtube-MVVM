@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="song"
+            type="com.melihispir.youdino.model.Song" />
+        <variable
+            name="listener"
+            type="com.melihispir.youdino.adapter.OnItemClickListener" />
+    </data>
+
+    <LinearLayout
+        android:onClick="@{() -> listener.onItemClicked(song)}"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <TextView
+            android:id="@+id/imageview"
+            android:text="@{song.songName}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+</layout>
